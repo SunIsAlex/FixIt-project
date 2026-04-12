@@ -22,7 +22,7 @@ hiddenFromRelated: false
 hiddenFromFeed: false
 summary: "详细推导 a^3 + b^3 + c^3 - 3abc = (a + b + c)(a² + b² + c² - ab - bc - ca) 的因式分解及应用"
 featuredImagePreview:
-featuredImage:
+featuredImage: image.png
 password:
 message:
 repost:
