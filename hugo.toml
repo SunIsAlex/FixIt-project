@@ -41,3 +41,9 @@ inline = [
 enable = true
 type = "katex"
 
+
+[params.busuanzi]
+enable = true
+pageViews = true
+siteViews = true
+source = 'https://vercount.one/js'
