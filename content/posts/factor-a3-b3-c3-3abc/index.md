@@ -82,6 +82,7 @@ $abc=0$,不妨设$c=0,a+b=0$,则所求式显然等于0.
 
 ## 例三
 (2016北大自招)已知对于实数$a$,存在实数$b,c$满足$a^3-b^3-c^3=3abc,a^2=2(b+c)$,则这样的实数$a$的个数为()
+
 A.1 B.3 C.无穷个  D.前三个选项都不对
 
 由※有$a-b-c=0$或$a=-b=-c$,下面对两个情况进行分类讨论:
@@ -144,11 +145,15 @@ $6abc+a^2+b^2+c^2-(ab+bc+ca)=6p+s^2-3q=6p-3q+1\ge -\frac{1}{3}(q-1)\ge \frac{2}{
 ## 例7
 (美国数学竞赛)求证:任意三个**互不相等**的**质数**,其立方根**不可能**为**等差数列**的其中三项.
 
-反证法:设三个质数为$p_1<p_2<p_3$,假设$\sqrt[3]{p_1}+\sqrt[3]{p_3}=2\sqrt[3]{p_2}$,则:
+反证法:设三个质数为$p_1<p_2<p_3$,假设$\frac{\sqrt[3]{p_2}-\sqrt[3]{p_1}}{k}=\frac{\sqrt[3]{p_3}-\sqrt[3]{p_2}}{l},k,l\in N^*$,则:
 
-$(\sqrt[3]{p_1})^3+(\sqrt[3]{p_3})^3+(-2(\sqrt[3]{p_2}))^3=p_1+p_3-8p_2=3(\sqrt[3]{p_1})(\sqrt[3]{p_2})(-2\sqrt[3]{p_3})$
+$l\sqrt[3]{p_1}-(k+l)\sqrt[3]{p_2}+k\sqrt[3]{p_3}=0$
 
-其中$p_1+p_3-8p_2$一定为整数,而$6\sqrt[3]{p_1p_2p_3}$不可能为整数,否则立方后与质因数的唯一分解矛盾.
+$(l\sqrt[3]{p_1})^3+(k\sqrt[3]{p_3})^3+[-(k+l)(\sqrt[3]{p_2})]^3=l^3p_1+k^3p_3-(k+l)^3p_2=-3lk(k+l)(\sqrt[3]{p_1})(\sqrt[3]{p_2})(\sqrt[3]{p_3})$
+
+左边为整数，故 $\sqrt[3]{p_1 p_2 p_3}$ 必须是有理数（注意右边系数 $3lk(k+l)\neq 0$）。
+
+但 $\sqrt[3]{p_1 p_2 p_3}$ 是无理数： 若 $\sqrt[3]{p_1 p_2 p_3} = \dfrac{q}{r}$（$\gcd(q,r)=1$），则 $r^3 p_1 p_2 p_3 = q^3$。由此 $p_1 \mid q^3$，因 $p_1$ 为质数故 $p_1 \mid q$，设 $q = p_1 q'$，代入得 $r^3 p_2 p_3 = p_1^2 q'^3$，故 $p_1 \mid r^3$，进而 $p_1 \mid r$，与 $\gcd(q,r)=1$ 矛盾。
 
 Q.E.D
 
@@ -158,6 +163,118 @@ Q.E.D
 原式=$\frac{a^2(b+c)+b^2(c+a)+c^2(a+b)}{abc}=-\frac{a^3+b^3+c^3}{abc}=-3$
 
 ---
+
+# 一元三次方程
+![alt text](image-1.png "wiki")
+这里引入一元三次方程卡尔丹公式的一种证明:
+对于$ax^3+bx^2+cx+d=0(a\neq 0)$,总可以通过平移与伸缩化为:
+
+$u^3+pu+q=0$
+
+设$u+v+w=0$:
+
+$u^3+v^3+w^3-3uvw=0$
+
+$\begin{cases}
+  v^3+w^3=q,\\
+  vw=-\frac{1}{3}p
+\end{cases}$
+
+这就相当于:
+
+$\begin{cases}
+  v^3+w^3=q,\\
+  v^3w^3=-\frac{1}{27}p^3
+\end{cases}$
+
+也就是$v^3,w^3$是一元二次方程$t^2-qt-\frac{1}{27}p^3=0$的两根.
+
+判别式$\Delta=q^2+\frac{4}{27}p^3$
+
+考虑$v,w$的对称性,不妨令:
+
+$
+\Delta\geq 0\begin{cases}
+v^3=\frac{q+\sqrt{\Delta}}{2},\\
+w^3=\frac{q-\sqrt{\Delta}}{2}
+\end{cases}\\
+\Delta\lt 0\begin{cases}
+v^3=\frac{q+\sqrt{-\Delta}i}{2},\\
+w^3=\frac{q-\sqrt{-\Delta}i}{2}
+\end{cases}$
+
+为了书写方便起见,下面不区分$\sqrt{-\Delta}$和$\sqrt{\Delta}i$
+
+由**棣莫弗公式**及$vw=-\frac{1}{3}p$的限制:
+
+$\begin{cases}
+v=\sqrt[3]{\frac{q+\sqrt{\Delta}}{2}},\\
+w=\sqrt[3]{\frac{q-\sqrt{\Delta}}{2}}
+\end{cases}\begin{cases}
+v=\sqrt[3]{\frac{q+\sqrt{\Delta}}{2}}w,\\
+w=\sqrt[3]{\frac{q-\sqrt{\Delta}}{2}}w^{-1}
+\end{cases}\begin{cases}
+v=\sqrt[3]{\frac{q+\sqrt{\Delta}}{2}}w^2,\\
+w=\sqrt[3]{\frac{q-\sqrt{\Delta}}{2}}w^{-2}
+\end{cases}$
+
+$u=-(v+w)$,于是便解出了三个根.
+
+而根据$\Delta=q^2+\frac{4}{27}p^3$的符号,可以判断根的情况:
+
+$\begin{cases}
+\Delta=0且pq\neq 0:方程有一个两重实根和一个单重实根\\
+\Delta\gt 0:方程有一个实根和一对共轭虚根\\
+\Delta\lt 0:方程有三个互异实根\\
+pq=0:方程有一个三重实根
+\end{cases}$
+
+# $\Delta < 0$：三个实根的情形（"不可约情形"）
+
+## 直觉上的困惑
+
+当 $\Delta < 0$ 时，$\sqrt{\Delta}$ 是虚数，于是 $v, w$ 的表达式里出现了复数的立方根——**但最终结果却是三个实数**。这正是历史上著名的**"不可约情形"（casus irreducibilis）**，卡尔达诺本人也对此感到困惑。
+
+---
+
+## 用三角方法理解
+
+当 $\Delta < 0$ 时，换一种参数化更直观。此时 $\dfrac{q+\sqrt{-\Delta}i}{2}$ 是一个复数，写成极坐标形式：
+
+$$\frac{q+\sqrt{-\Delta}i}{2} = r e^{i\theta}$$
+$$\frac{q-\sqrt{-\Delta}i}{2} = r e^{-i\theta}$$
+
+其中
+
+$$r = \sqrt{\frac{q^2 - |\Delta|}{4}} = \sqrt{-\frac{p^3}{27}}, \quad \theta = \arctan\frac{\sqrt{-\Delta}}{q}$$
+
+（$\Delta < 0$ 时 $p < 0$，故 $r$ 是实数。）
+
+$r^{1/3} e^{i(\theta + 2k\pi)/3}+r^{1/3} e^{i(-\theta + 2k\pi)/3}$，$k=0,1,2$，对应三个根：
+
+$$\boxed{u_k = -2\sqrt{-\frac{p}{3}}\cos\left(\frac{1}{3}\arccos\left(\frac{3q}{2p}\sqrt{-\frac{3}{p}}\right) - \frac{2k\pi}{3}\right), \quad k=0,1,2}$$
+
+三个根全部是实数，因为复数部分在 $v+w$ 相加时恰好相消。
+
+---
+
+## 为什么复数会消失？
+
+关键在于 $vw = -p/3$ 是实数约束。$v$ 和 $w$ 互为共轭复数：
+
+$$v = r^{1/3}e^{i\theta/3}, \quad w = \bar{v} = r^{1/3}e^{-i\theta/3}$$
+
+所以
+
+$$u = -(v+w) = -2r^{1/3}\cos\frac{\theta}{3} \in \mathbb{R}$$
+
+另外两个根对应 $\theta$ 替换为 $\theta + 2\pi$、$\theta + 4\pi$，同样是实数。**复数只是计算的"中间语言"，最终虚部两两抵消。**
+
+---
+
+## 历史意义
+
+不可约情形在历史上证明了一件重要的事：**即使方程的根全是实数，有时也无法避免在推导过程中经过复数**。这正是推动复数被数学家认真对待的重要动力之一。
 
 # 结语(Gemini)
 
