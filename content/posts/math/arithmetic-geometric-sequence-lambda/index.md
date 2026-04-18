@@ -33,7 +33,7 @@ repost:
 # See details front matter: https://fixit.lruihao.cn/documentation/content-management/introduction/#front-matter
 ---
 已知$\{a_n\}$是首项为$a$,公差为2的无限等差数列,$\{b_n\}$是首项为1,公比为2的无限等比数列,记$\lambda_n = \dfrac{a_1 + a_2 + \cdots + a_n}{b_n}$,给出下列四个结论：
-
+<!--more-->
 ①当$0 < a < 2$时,有$\lambda_1 < \lambda_2 < \lambda_3$;
 
 ②存在$a \in \mathbb{R}$,使得$\{\lambda_n\}$的前2025项为单调递增数列;
@@ -43,7 +43,7 @@ repost:
 ④当且仅当$a = 2$时,存在$k \in \mathbb{N}^*$,使得$\lambda_k = \lambda_{k+1}$.
 
 其中所有正确结论的序号是 ___ .
-<!--more-->
+
 
 首先记$S_n=\sum_{i=1}^na_i$对${S_n},{b_n},{\lambda_n}$的前三项进行计算:
 
