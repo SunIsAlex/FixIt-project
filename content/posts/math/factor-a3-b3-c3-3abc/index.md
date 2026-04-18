@@ -13,9 +13,10 @@ keywords:
 comment: false
 weight: 0
 tags:
-  - draft
+  - 数学强基
+  - 高联一试
 categories:
-  - draft
+  - 数学
 hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
