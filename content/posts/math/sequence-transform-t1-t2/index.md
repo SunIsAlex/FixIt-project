@@ -1,5 +1,5 @@
 ---
-title: 单调有界与离散取值
+title: 单调有界必重复
 subtitle:
 date: 2026-04-18T16:15:30+08:00
 draft: false
