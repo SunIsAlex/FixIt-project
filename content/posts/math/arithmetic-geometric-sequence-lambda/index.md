@@ -115,9 +115,12 @@ $c_n=\frac{S_n}{a_n}=\frac{n(a_1+a_n)}{2a_n}=\frac{n}{2}(1+\frac{a_1}{a_n})=\fra
 
 显然$c_n$的符号由$1+\frac{1}{1+(n-1)\frac{d}{a}}$决定,如果$c_n$中小于0的项是有限的,肯定有最小的$c_n$.
 
-$$1+\frac{1}{1+(n-1)\frac{d}{a}}\lt 0\\
+$$
+\begin{gathered}
+  1+\frac{1}{1+(n-1)\frac{d}{a}}\lt 0\\
 \Leftrightarrow1+(n-1)\frac{d}{a}\in (-1,0)\\
-\Leftrightarrow (n-1)\in (0,\frac{-2}{\frac{d}{a}})$$
+\Leftrightarrow (n-1)\in (0,\frac{-2}{\frac{d}{a}})
+\end{gathered}$$
 
 其中,$\frac{-2}{\frac{d}{a}}\gt 4$,这样的$n$只有有限种可能,所以$c_n$有最小项.
 
