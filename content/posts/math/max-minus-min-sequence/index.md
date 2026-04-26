@@ -13,9 +13,10 @@ keywords:
 comment: false
 weight: 0
 tags:
-  - draft
+  - 高考数学
+  - 数列
 categories:
-  - draft
+  - 数学
 hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
@@ -120,3 +121,35 @@ a_{t+3k} = a_t + 2k a_{t+1} \quad (k=1,2,3,\dots)
 \]
 取 \(k > \dfrac{M - a_t}{2a_{t+1}}\)，则 \(a_{t+3k} > M\)，与上界 \(M\) 矛盾。  
 故假设不成立，即不存在这样的 \(M\)。
+
+## 不可视之物（标答）
+非常*克苏鲁*的证明方法:
+(Ⅲ)【解】不存在正实数 $M$，使得对任意的正整数 $n$，都有 $a_n \leqslant M$。理由如下。
+因为 $a_n > 0 (n \in \mathbf{N}^*)$，所以 $a_n \neq a_{n+1} (n = 2, 3, \dots)$。
+设集合 $S = \{n \mid a_n > a_{n+1}, n \geqslant 1\}$。
+(1)若 $S = \{n \mid a_n > a_{n+1}, n \geqslant 1\} = \varnothing$，则 $a_1 \leqslant a_2, a_i < a_{i+1} (i = 2, 3, \dots)$。
+对任意 $M > 0$，取 $n_1 = \left[ \frac{M}{a_1} \right] + 2$ (其中 $[x]$ 表示不超过 $x$ 的最大整数)，
+则当 $n > n_1$ 时，
+$a_n = (a_n - a_{n-1}) + (a_{n-1} - a_{n-2}) + \dots + (a_3 - a_2) + a_2 = a_{n-2} + a_{n-3} + \dots + a_1 + a_2 \geqslant (n - 1)a_1 > M$。
+(2)若 $S = \{n \mid a_n > a_{n+1}, n \geqslant 1\} \neq \varnothing$，且 $S$ 为有限集，
+设 $m = \max \{n \mid a_n > a_{n+1}, n \geqslant 1\}$，则 $a_{m+i} < a_{m+i+1} (i = 1, 2, \dots)$。
+对任意 $M > 0$，取 $n_2 = \left[ \frac{M}{a_{m+1}} \right] + m + 1$ (其中 $[x]$ 表示不超过 $x$ 的最大整数)，
+则当 $n > n_2$ 时，
+$a_n = (a_n - a_{n-1}) + (a_{n-1} - a_{n-2}) + \dots + (a_{m+2} - a_{m+1}) + a_{m+1} = a_{n-2} + a_{n-3} + \dots + a_m + a_{m+1} > (n - m)a_{m+1} > M$。
+(3)若 $S = \{n \mid a_n > a_{n+1}, n \geqslant 1\} \neq \varnothing$，且 $S$ 为无限集，
+设 $p_1 = \min \{n \mid a_n > a_{n+1}, n \geqslant 1\}, p_{i+1} = \min \{n \mid a_n > a_{n+1}, n > p_i\} (i = 1, 2, \dots)$。
+若 $p_{i+1} - p_i = 1$，则 $a_{p_i} > a_{p_i+1} > a_{p_i+2}$。又 $a_{p_i} < \max(a_{p_i+1}, a_{p_i+2})$，矛盾。
+所以 $p_{i+1} - p_i \geqslant 2 (i = 1, 2, \dots)$。
+记 $m_i = a_{p_i+1} (i = 1, 2, \dots)$。
+当 $p_{i+1} - p_i = 2$ 时，$a_{p_i} > a_{p_i+1}, a_{p_i+1} < a_{p_i+2}, a_{p_i+2} > a_{p_i+3}$。
+因为 $a_{p_i+1} = a_{p_i+2} - a_{p_i+3}$，所以 $m_{i+1} = a_{p_{i+1}+1} = a_{p_i+2} - a_{p_i+1} = a_{p_i} > a_{p_i+1} = m_i$。
+当 $p_{i+1} - p_i \geqslant 3$ 时，$a_{p_i} > a_{p_i+1}, a_{p_i+1} < a_{p_i+2} < \dots < a_{p_{i+1}}, a_{p_{i+1}} > a_{p_{i+1}+1}$。
+因为 $a_{p_{i+1}-1} = a_{p_{i+1}} - a_{p_{i+1}+1}$，所以 $m_{i+1} = a_{p_{i+1}+1} = a_{p_{i+1}} - a_{p_{i+1}-1} = a_{p_{i+1}-2} \geqslant a_{p_i+1} = m_i$。
+所以 $m_i \leqslant m_{i+1} (i = 1, 2, \dots)$。
+因为 $a_{p_{i+1}} = a_{p_{i+1}+2} - a_{p_{i+1}+1}$，
+所以 $a_{p_{i+1}+2} = a_{p_{i+1}} + a_{p_{i+1}+1} = a_{p_{i+1}} + m_{i+1} \geqslant a_{p_{i+1}} + m_1 \geqslant a_{p_i+2} + m_1 (i = 1, 2, \dots)$。
+所以 $a_{p_{i+1}+2} - a_{p_i+2} \geqslant m_1 (i = 1, 2, \dots)$，且 $a_{p_1+2} > a_{p_1+1} = m_1$。
+对任意 $M > 0$，
+取 $n_3 = \left[ \frac{M}{m_1} \right] + 1$ (其中 $[x]$ 表示不超过 $x$ 的最大整数)，则当 $k > n_3$ 时，
+$a_{p_k+2} = (a_{p_k+2} - a_{p_{k-1}+2}) + (a_{p_{k-1}+2} - a_{p_{k-2}+2}) + \dots + (a_{p_2+2} - a_{p_1+2}) + a_{p_1+2} \geqslant (k - 1)m_1 + a_{p_1+2} > km_1 > M$。
+综上，不存在正实数 $M$，使得对任意的正整数 $n$，都有 $a_n \leqslant M$。
