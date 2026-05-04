@@ -49,4 +49,4 @@ siteViews = true
 source = 'https://vercount.one/js'
 
 [params.cookieconsent]
-enable = true
+enable = false

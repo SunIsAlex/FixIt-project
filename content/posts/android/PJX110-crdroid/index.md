@@ -12,9 +12,11 @@ keywords:
 comment: false
 weight: 0
 tags:
-  - draft
+  - 刷机
+  - "crDroid"
+  - ROM
 categories:
-  - draft
+  - Android
 hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
@@ -100,11 +102,13 @@ fastboot flashing unlock
 成功效果如图:
 
 ![alt text](fastboot_flashing_unlock.png)
-
+![alt text](unlock_bootloader.webp "参考")
 ## 安装步骤
+
+### 底包(C16)
 首先查看所需要的底包(理论上Android 16,即ColorOS16都可以)
 
-但是最好和crDroid构建时的底层版本一致.
+但是(firmware)最好和crDroid构建时的底层版本一致.
 
 在GitHub上查看[专有文件列表](https://github.com/crdroidandroid/android_device_oneplus_corvette/blob/16.0/proprietary-files.txt#L2)前两行
 
@@ -126,3 +130,71 @@ https://gauss-compota-c-cn.allawnfs.com/remove-a39fc75063832d557a24f7ab02a02380/
 ![](Screenshot_2026-05-02-19-36-28-06_fc704e6b13c4fb26bf5e411f75da84f2.jpg)
 
 ![](Screenshot_2026-05-02-21-06-36-51_9492aa3750dca76abb7c25b39a5f1e8e.jpg)
+
+### recovery
+```
+fastboot flash boot boot.img
+fastboot flash dtbo dtbo.img
+fastboot flash init_boot init_boot.img
+fastboot flash vbmeta vbmeta.img
+fastboot flash vendor_boot vendor_boot.img
+fastboot flash recovery recovery.img
+```
+![alt text](Snipaste_2026-05-03_18-28-18.png "参考图")
+
+成功刷入REC及其底层后,由bootloader进入recovery
+```
+fastboot reboot recovery
+```
+### crDroid
+| 方式 | 介质 | 是否需要电脑 | 典型操作 |
+|------|------|-------------|----------|
+| 线刷 | USB 数据线 | ✅ 需要 | fastboot flash/adb sideload |
+| 卡刷 | SD 卡 / 本地存储 | ❌ 不需要 | 在 Recovery 中选择本地 zip 包刷入 |
+
+这里我们采取sideload线刷(REC环境).
+
+![alt text](crDroid-recovery.jpeg "参考图")
+用 音量键+电源键 选择**Factory Reset** > **Format data**
+
+然后回到主菜单,选择**Apply update**
+```
+adb sideload crDroid.zip
+```
+这里简单科普一下sideload原理:
+
+| 方式 | 是否落盘 | 流程 |
+|------|---------|------|
+| 卡刷（本地 zip） | ✅ 完整文件已在设备上 | 读取 → 校验 → 解压安装 |
+| adb sideload | ❌ 不完整落盘 | 流式传输 + 同步校验安装 |
+| fastboot flash | ❌ | 直接写入对应分区，无"安装"概念 |
+
+安装到一半,REC会询问是否进行额外安装(reboot in recovery again for installing additional packages),请根据实际情况选择.
+
+{{< tabs >}}
+{{% tab title="安装gapps" %}}`adb sideload gapps.zip`
+
+![alt text](Snipaste_2026-05-03_18-28-32.png){{% /tab %}}
+{{% tab title="不安装gapps" %}}继续安装
+![alt text](image.png){{% /tab %}}
+{{< /tabs >}}
+
+Total xfer(Total transfer)是**总传输倍率**，表示实际传输的数据量与原始包大小的比值,如果没有出错应该等于1,大于1说明数据出错,进行了重传。
+
+最后,crDroid安装完成,重启即可.
+
+## 结语
+
+在厂商 ROM 日趋完善的今天，ColorOS 的流畅、MIUI(HyperOS) 的生态、甚至各家"AI 系统"的种种噱头，
+早已将智能手机打磨得无懈可击——至少表面上如此。
+
+那我们为什么还要费尽周折，刷一个看起来"简陋"的类原生 ROM？
+
+答案或许很简单：**我们不在乎手机里塞了多少用不到的功能，我们在乎的是这台手机究竟听谁的。**
+
+没有云控，没有静默推送，没有哪个进程在后台悄悄做着你不知道的事。
+你的设备，运行着你选择的系统，只为你服务。
+
+这种掌控感，是任何一套"智慧生活"或"AI 调度"都换不来的。
+
+自由、隐私、开放——从来不是开箱即用的功能，而是你亲手刷进去的。
