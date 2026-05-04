@@ -2,6 +2,7 @@ baseURL = 'https://blog.sunisalex.org/'
 languageCode = 'en-us'
 title = 'Alexの小站'
 theme = 'FixIt'
+enableRobotsTXT = true
 [params]
   capitalizeTitles = false     # 关闭 FixIt 的标题自动大写
 [markup]
