@@ -223,16 +223,6 @@ FixIt theme assets partial
 {{- end -}}
 
 {{- /* Watermark */ -}}
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // 移除注入的 unified.js
-    document.querySelectorAll('script[src*="cdnstatic.tencentcs.com/edgeone"]')
-      .forEach(el => el.remove());
-    // 移除注入的 tooltip 样式
-    const tooltipStyle = document.getElementById('cell-tooltip-runtime-style');
-    if (tooltipStyle) tooltipStyle.remove();
-  });
-</script>
 {{- if eq .Site.Params.watermark.enable true -}}
   {{- $source := $cdn.cellWatermarkJS | default "lib/cell-watermark/watermark.min.js" -}}
   {{- dict "Source" $source "Fingerprint" $fingerprint "Defer" true | dict "Page" . "Data" | partial "store/script.html" -}}

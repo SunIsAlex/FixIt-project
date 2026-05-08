@@ -36,5 +36,10 @@
 
     {{- /* Load JavaScript scripts and CSS */ -}}
     {{- partial "assets.html" . -}}
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
   </body>
 </html>
