@@ -1,5 +1,5 @@
 ---
-title: Index
+title: 圆锥曲线的焦半径公式
 subtitle:
 date: 2026-05-10T16:40:46+08:00
 draft: false
@@ -78,6 +78,14 @@ $\boxed{\frac{2ab^2}{a^2\sin^2\theta+b^2\cos^2\theta}=\frac{2ab^2}{a^2-c^2\cos^2
 这个结果是经得起审视的:如果椭圆退化成圆($e=1$),则$c=0$,焦点(此时退化为原点)弦恒长$2a=2b$
 
 如果换成左焦点,相当于$\theta \to \pi-\theta$,公式保持不变.
+
+更加细致地,可以算出焦点弦在x轴上下方的长度.
+
+$\begin{cases}
+  |t_1|=\frac{b^2}{a+c\cos\theta},\\
+  |t_2|=\frac{b^2}{a-c\cos\theta},\\
+  |t_1t_2|=\frac{b^4}{a^2-c^2\cos^2\theta}
+\end{cases}$
 ### 双曲线
 对于双曲线$H:\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$,右焦点$F(c,0)$,设过右焦点的焦点弦倾斜角为$\theta$,斜率为$k$.
 $\begin{cases}
@@ -94,17 +102,25 @@ $\begin{cases}
 
 到此为止,与椭圆焦点弦长的推导一致,此后便出现分歧.
 
-$-a^2\sin^2\theta+b^2\cos^2\theta$的正负与$\theta$密切相关.
+$T=-a^2\sin^2\theta+b^2\cos^2\theta=c^2\cos^2\theta-a^2$的正负与$\theta$密切相关.
 
 事实上,如果:
 
-- $|k|=|\tan\theta|\gt \frac{b}{a}$,则直线与双曲线交于右支.
-- $|k|=|\tan\theta|\lt \frac{b}{a}$,则直线与双曲线交于左右支.
-- $|k|=|\tan\theta|= \frac{b}{a}$,则直线与双曲线交于右支一点和无穷远点,焦点弦无限长
+- $|k|=|\tan\theta|\gt \frac{b}{a}$,则$T\lt 0$,直线与双曲线交于右支.
+- $|k|=|\tan\theta|\lt \frac{b}{a}$,则$T\gt 0$,直线与双曲线交于左右支.
+- $|k|=|\tan\theta|= \frac{b}{a}$,则$T=0$,直线与双曲线交于右支一点和无穷远点,焦点弦无限长
 
 $\boxed{\frac{2ab^2}{|-a^2\sin^2\theta+b^2\cos^2\theta|}=\frac{2ab^2}{|a^2-c^2\cos^2\theta|}}$
 
 左焦点的情况与公式完全相同,不加赘述.
+
+同样计算$t_1,t_2$
+
+$\begin{cases}
+  |t_1|=\frac{b^2}{a+c\cos\theta},\\
+  |t_2|=\frac{b^2}{|a-c\cos\theta|},\\
+  |t_1t_2|=\frac{b^4}{|a^2-c^2\cos^2\theta|}
+\end{cases}$
 ### 抛物线
 设抛物线$y^2=2px(p>0)$,焦点$F(\frac{p}{2},0)$,焦点弦倾斜角$\theta$.
 
@@ -122,6 +138,11 @@ $\begin{cases}
 
 $\boxed{\frac{2p}{\sin^2\theta}}$
 
+$\begin{cases}
+  |t_1|=\frac{p(1+\cos\theta)}{\sin^2\theta},\\
+  |t_2|=\frac{p(1-\cos\theta)}{\sin^2\theta},\\
+  |t_1t_2|=\frac{p^2}{\sin^2\theta}
+\end{cases}$
 ## 小试牛刀
 焦点弦公式形式简洁统一,易于记忆,可以加快解题速度(以下只呈现与焦点弦相关的核心步骤).
 
@@ -135,3 +156,16 @@ $\frac{2ab^2}{-a^2\sin^2\theta+b^2\cos^2\theta}=\frac{8ab^2}{-a^2+3b^2}=4a$
 得出$a=b,e=1$.
 
 ### 例2
+(2025广州预赛)已知双曲线$C:x^2-\frac{y^2}{3}=1$的左,右焦点分别为$F_1,F_2$,过$F_2$的直线$l$与$C$的右支交于$A,B$两点.若$\triangle AF_1B$的外接圆被$x$轴截得的弦长为7,则$|AB|=$____.
+
+易知$\triangle AF_1B$的外接圆与$x$轴交于$F_1$,设另一个交点为$D$,可算得$F_2D=7-|F_1F_2|=3$.
+
+考虑用圆幂定理:
+
+$|t_1t_2|=|F_1F_2||F_2D|$
+
+$\frac{b^4}{a^2-c^2\cos^2\theta}=\frac{9}{1-4\cos^2\theta}=4\times 3=12$
+
+于是$\cos^2\theta=\frac{1}{16}$,用焦点弦公式得:
+
+$|AB|=\frac{2ab^2}{a^2-c^2cos^2}=\frac{2\times 1\times 3}{1-4\times \frac{1}{16}}=8$
