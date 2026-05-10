@@ -1,6 +1,6 @@
 baseURL = 'https://blog.sunisalex.org/'
-languageCode = 'en-us'
-title = 'Alexの小站'
+languageCode = 'zh-cn'
+title = '∅AxiomLab'
 theme = 'FixIt'
 enableRobotsTXT = true
 [params]

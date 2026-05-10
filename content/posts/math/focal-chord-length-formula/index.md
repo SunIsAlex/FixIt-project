@@ -1,0 +1,137 @@
+---
+title: Index
+subtitle:
+date: 2026-05-10T16:40:46+08:00
+draft: false
+author:
+  name:
+  link:
+  email:
+  avatar:
+description:
+keywords:
+comment: false
+weight: 0
+tags:
+  - 高考数学
+  - 圆锥曲线
+categories:
+  - 数学
+hiddenFromHomePage: false
+hiddenFromSearch: false
+hiddenFromRelated: false
+hiddenFromFeed: false
+summary:
+featuredImagePreview:
+featuredImage:
+password:
+message:
+repost:
+  enable: false
+  url:
+
+# See details front matter: https://fixit.lruihao.cn/documentation/content-management/introduction/#front-matter
+---
+圆锥曲线的焦点弦长是题目常常设问之处,本文用**直线参数方程**推导了:
+- 椭圆
+- 双曲线
+- 抛物线
+
+的**焦点弦长公式**
+<!--more-->
+## 直线的参数方程
+过点$P(x_0,y_0)$的直线可表示为:
+
+$\begin{cases}
+  x=x_0+t\cos(\theta),\\
+  y=y_0+t\sin(\theta)
+\end{cases}$
+
+|字母|含义|
+|---|---|
+|$\theta$|直线的倾斜角|
+|$t$|有向距离|
+
+## 公式推导
+一般地,把直线的参数方程与圆锥曲线联立,会得到一个关于$t$一元二次方程,两根为$t_1,t_2$.
+
+直线被圆锥曲线所截的长度,始终为$|t_1-t_2|=\frac{\sqrt{\Delta}}{|a|}$
+### 椭圆
+对于椭圆$E:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$,右焦点$F(c,0)$,设过右焦点的焦点弦倾斜角为$\theta$.
+
+$\begin{cases}
+  x=c+t\cos(\theta),\\
+  y=t\sin(\theta),\\
+  b^2x^2+a^2y^2=a^2b^2
+\end{cases}$
+
+联立得:$(a^2\sin^2\theta+b^2\cos^2\theta)t^2+(2b^2c\cos\theta)t+b^2(c^2-a^2)=0$
+
+这个结果的正确性可以由**量纲**检验(把a,b,c,t看成长度,左右长度的幂次均为4)
+
+判别式$\Delta=4a^2b^4$
+
+焦点弦长:$|t_1-t_2|=\frac{\sqrt{\Delta}}{|a^2\sin^2\theta+b^2\cos^2\theta|}$
+
+$\boxed{\frac{2ab^2}{a^2\sin^2\theta+b^2\cos^2\theta}=\frac{2ab^2}{a^2-c^2\cos^2\theta}}$
+
+这个结果是经得起审视的:如果椭圆退化成圆($e=1$),则$c=0$,焦点(此时退化为原点)弦恒长$2a=2b$
+
+如果换成左焦点,相当于$\theta \to \pi-\theta$,公式保持不变.
+### 双曲线
+对于双曲线$H:\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$,右焦点$F(c,0)$,设过右焦点的焦点弦倾斜角为$\theta$,斜率为$k$.
+$\begin{cases}
+  x=c+t\cos(\theta),\\
+  y=t\sin(\theta),\\
+  b^2x^2-a^2y^2=a^2b^2
+\end{cases}$
+
+联立得:$(-a^2\sin^2\theta+b^2\cos^2\theta)t^2+(2b^2c\cos\theta)t+b^2(c^2-a^2)=0$
+
+判别式$\Delta=4a^2b^4$
+
+焦点弦长:$|t_1-t_2|=\frac{\sqrt{\Delta}}{|-a^2\sin^2\theta+b^2\cos^2\theta|}$
+
+到此为止,与椭圆焦点弦长的推导一致,此后便出现分歧.
+
+$-a^2\sin^2\theta+b^2\cos^2\theta$的正负与$\theta$密切相关.
+
+事实上,如果:
+
+- $|k|=|\tan\theta|\gt \frac{b}{a}$,则直线与双曲线交于右支.
+- $|k|=|\tan\theta|\lt \frac{b}{a}$,则直线与双曲线交于左右支.
+- $|k|=|\tan\theta|= \frac{b}{a}$,则直线与双曲线交于右支一点和无穷远点,焦点弦无限长
+
+$\boxed{\frac{2ab^2}{|-a^2\sin^2\theta+b^2\cos^2\theta|}=\frac{2ab^2}{|a^2-c^2\cos^2\theta|}}$
+
+左焦点的情况与公式完全相同,不加赘述.
+### 抛物线
+设抛物线$y^2=2px(p>0)$,焦点$F(\frac{p}{2},0)$,焦点弦倾斜角$\theta$.
+
+$\begin{cases}
+  x=\frac{p}{2}+t\cos(\theta),\\
+  y=t\sin(\theta),\\
+  y^2=2px
+\end{cases}$
+
+联立得:$t^2sin^2\theta-2pt\cos\theta-p^2=0$
+
+判别式$\Delta=4p^2$
+
+焦点弦长:$|t_1-t_2|=\frac{\sqrt{\Delta}}{\sin^2\theta}$
+
+$\boxed{\frac{2p}{\sin^2\theta}}$
+
+## 小试牛刀
+焦点弦公式形式简洁统一,易于记忆,可以加快解题速度(以下只呈现与焦点弦相关的核心步骤).
+
+### 例1
+(2025重庆预赛)已知双曲线$E:\frac{x^2}{a^2}-\frac{y^2}{b^2}=1(a\gt 0,b\gt 0)$的左右焦点分别为$F_1$、$F_2$,$A$、$B$分别是$E$的左支和右支上的点,若$F_1,A,B$三点共线,且$\angle AF_1F_2=30\degree,|F_2A|=|F_2B|$,则双曲线的离心率$e=$____
+
+题目条件等价于$AB=4a,\theta=30\degree$且$-a^2\sin^2\theta+b^2\cos^2\theta\gt 0$,由双曲线焦点弦长公式
+
+$\frac{2ab^2}{-a^2\sin^2\theta+b^2\cos^2\theta}=\frac{8ab^2}{-a^2+3b^2}=4a$
+
+得出$a=b,e=1$.
+
+### 例2

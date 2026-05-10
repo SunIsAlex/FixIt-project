@@ -2,7 +2,6 @@
 title: Index
 subtitle:
 date: 2026-05-05T16:55:19+08:00
-slug: 3f1fd01
 draft: false
 author:
   name:
