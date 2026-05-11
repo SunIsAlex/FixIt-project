@@ -169,3 +169,5 @@ $\frac{b^4}{a^2-c^2\cos^2\theta}=\frac{9}{1-4\cos^2\theta}=4\times 3=12$
 于是$\cos^2\theta=\frac{1}{16}$,用焦点弦公式得:
 
 $|AB|=\frac{2ab^2}{a^2-c^2cos^2}=\frac{2\times 1\times 3}{1-4\times \frac{1}{16}}=8$
+
+### 例3
