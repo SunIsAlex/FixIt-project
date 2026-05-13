@@ -168,6 +168,49 @@ $\frac{b^4}{a^2-c^2\cos^2\theta}=\frac{9}{1-4\cos^2\theta}=4\times 3=12$
 
 于是$\cos^2\theta=\frac{1}{16}$,用焦点弦公式得:
 
-$|AB|=\frac{2ab^2}{a^2-c^2cos^2}=\frac{2\times 1\times 3}{1-4\times \frac{1}{16}}=8$
+$|AB|=\frac{2ab^2}{a^2-c^2\cos^2}=\frac{2\times 1\times 3}{1-4\times \frac{1}{16}}=8$
 
 ### 例3
+已知双曲线$\frac{x^2}{1}-\frac{y^2}{8}=1$的左,右焦点分别为$F_1,F_2$.
+
+设过$F_2$的直线$l$与$C$的左,右两支分别交于$A,B$两点,且$|AF_1|=|BF_1|$,证明:$|AF_2|,|AB|,|BF_2|$成等比数列.
+
+由例1知,$|AB|=4a=4$,设直线$l$的倾斜角为$\theta$,则:
+
+$|AB|=\frac{2ab^2}{-a^2+c^2\cos^2\theta}=\frac{16}{9\cos^2\theta-1}=4$
+
+解得:$\cos^2\theta=\frac{5}{9}$.
+
+更进一步,$|AF_2||BF_2|=\frac{b^4}{c^2\cos^2\theta-a^2}=\frac{64}{5-1}=16=|AB|^2$
+
+由此,不难得出:
+
+$|AF_2|,|AB|,|BF_2|$成等比数列$\leftrightarrow 5a^2=c^2\cos^2\theta$
+### 例4
+设$F$为椭圆$\Gamma:\frac{x^2}{4}+y^2=1$的右焦点,过点$F$分别作倾斜角为$30\degree$和$60\degree$的直线$l_1,l_2$,分别与椭圆$\Gamma$交于A,B,C,D四个点,则这四个点构成的凸四边形的面积为____.(李纪琛供题)
+
+$|AB|=\frac{2ab^2}{a^2-c^2\cos^230\degree}=\frac{4}{4-\frac{9}{4}}=\frac{16}{7}$,
+
+$|CD|=\frac{2ab^2}{a^2-c^2\cos^260\degree}=\frac{4}{4-\frac{3}{4}}=\frac{16}{13}$
+
+$S=\frac{1}{2}|AB||CD|\sin30\degree=\frac{64}{91}$
+
+### 例5
+(2022浙江预赛)已知椭圆$C_1:\frac{x^2}{24}+\frac{y^2}{b^2}=1(0\lt b\lt 2\sqrt{6})$的右焦点$F_1$,与抛物线$C_2:y^2=4px(p\in \N^+)$的焦点重合.过$F_1$且斜率为正整数的直线$l$交$C_1$于$A,B$,交$C_2$于$C,D$.若$13|AB|=\sqrt{6}|CD|$,求$b,p$的值.
+
+$c^2=24-b^2=p^2$
+
+设$l\text{的斜率为}k\in \N^+$,则:
+
+$\cos^2\theta=\frac{1}{k^2+1},\sin^2\theta=\frac{k^2}{k^2+1}$
+
+$13\frac{4\sqrt{6}b^2}{24-(24-b^2)\frac{1}{k^2+1}}=\sqrt{6}\frac{4p}{\frac{k^2}{k^2+1}}$
+
+
+$13b^2k^2=2p(24k^2+b^2)$
+
+$13(24-p^2)=2p(24k^2-p^2+24)$
+
+由$24-p^2\gt 0,p=1,2,3,4$
+
+经检验,只有$p=4,b=2\sqrt{2}$满足题意.
