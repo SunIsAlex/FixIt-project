@@ -2,7 +2,6 @@
 title: 微积分基础导论:极限与导数
 subtitle:
 date: 2026-05-17T16:37:18+08:00
-slug: d370644
 draft: false
 author:
   name:
