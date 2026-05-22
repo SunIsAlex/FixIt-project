@@ -69,9 +69,9 @@ enable = false
     icon = 'fa-solid fa-folder-open'
 
 [[menu.main]]
-  identifier = 'cn-site'
-  name       = 'Chinese Site'
-  url        = 'https://go.sunisalex.org'
+  identifier = 'nav'
+  name       = 'Navigation'
+  url        = 'https://app.sunisalex.org'
   weight     = 30
   [menu.main.params]
     icon = 'fa-solid fa-globe'
