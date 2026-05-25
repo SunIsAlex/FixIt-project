@@ -12,9 +12,10 @@ keywords:
 comment: false
 weight: 0
 tags:
-  - draft
+  - 物理竞赛
+  - 微积分
 categories:
-  - draft
+  - 物理
 hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
