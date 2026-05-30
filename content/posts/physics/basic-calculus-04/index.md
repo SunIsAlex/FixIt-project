@@ -163,5 +163,75 @@ $$\begin{gathered}
 
 $a_n=|\vec{a}|=2,\vec{v}=(1,0),|v|=1,\rho=\frac{v^2}{a_n}=\frac{1}{2}$
 ### 例5
-已知椭圆$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$,求端点处的曲率半径.
+已知椭圆$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1(a>b>0)$,求端点处的曲率半径.
 
+如果设水平速度恒定，会导致在长轴处出现问题;设竖直速度恒定，短轴处也会出问题
+
+我们采取极坐标换元:
+
+$$\begin{gathered}
+\vec{x}=(a\cos(\omega t+\phi),b\sin(\omega t+\phi))\\
+\vec{v}=(-a\omega\sin(\omega t+\phi),b\omega\cos(\omega t+\phi))\\
+\vec{a}=(-a\omega^2\cos(\omega t+\phi),-b\omega^2\sin(\omega t+\phi))
+\end{gathered}$$
+
+在$(0,b)$处，$\omega t+\phi=\frac{\pi}{2}$.
+
+$$\begin{gathered}
+  \vec{v}=(-a\omega,0)\\
+  \vec{a_n}=\vec{a}=(0,-b\omega^2)\\
+  \rho=\frac{|v|^2}{|a_n|}=\frac{a^2}{b}
+\end{gathered}$$
+
+在$(a,0)$处，$\omega t+\phi=0$.
+
+$$\begin{gathered}
+  \vec{v}=(0,b\omega)\\
+  \vec{a_n}=\vec{a}=(-a\omega^2,0)\\
+  \rho=\frac{|v|^2}{|a_n|}=\frac{b^2}{a}
+\end{gathered}$$
+
+### 例6
+一根支在固定圆上的长木棍，一端A在地面上做速度为$v$的匀速运动，求交点P与接触点E速度.
+
+![alt text](image-6.png)
+
+$$\begin{gathered}
+  A(x,0)\\
+  \frac{dx}{dt}=v\\
+  P(\frac{r^2}{x},r\sqrt{1-\frac{r^2}{x^2}})\\
+  \vec{v_p}=(v\frac{-r^2}{x^2},v\frac{r^3}{x^3}\frac{1}{\sqrt{1-\frac{r^2}{x^2}}})
+\end{gathered}$$
+
+类似的，我们求接触点E速度。注意接触点的约束条件不是在圆上，而是到A点距离不变。
+
+$$\begin{gathered}
+\vec{AP}=(\frac{r^2}{x}-x,r\sqrt{1-\frac{r^2}{x^2}})\\
+|AP|=\sqrt{x^2-r^2}\\
+\vec{l}=\frac{\vec{AP}}{|AP|}=(-\frac{\sqrt{x^2-r^2}}{x},\frac{r}{x})\\
+E=A+|AP|\\
+E'(t)=A'+|AP|\vec{l}'\\
+=(v,0)+\sqrt{x^2-r^2}(-v\frac{2r^2}{x^3}\frac{1}{2\sqrt{1^2-\frac{r^2}{x^2}^2}},-v\frac{r}{x^2})\\
+=(v(1-\frac{r^2}{x^2}),-v\frac{r}{x^2}\sqrt{x^2-r^2})
+\end{gathered}$$
+
+### 例7(虚功原理)
+有一个圆上，其半圆部分放有均匀细绳，质量为$m$,求顶点处的张力。
+
+![alt text](image-5.png)
+
+对无数微小质元受力分析，考虑沿切线方向受力平衡:
+
+$$\begin{gathered}
+  dF=\frac{d\theta}{\pi}mg\cos \theta\\
+  \int_{0}^{F}=\frac{mg}{\pi}\int_{0}^\frac{\pi}{2}\cos\theta d\theta\\
+  =\frac{mg}{\pi}
+\end{gathered}$$
+
+当然，我们有一个技巧性强的做法：**虚功原理**.
+
+缓慢把绳拉动$\Delta x$,$F\Delta x=\frac{\Delta x}{\pi R}mgR$,则$F=\frac{mg}{\pi}$
+
+![](image-7.png)
+
+使用虚功原理，可以较容易地解决2026朝阳高三二模T19(2)
