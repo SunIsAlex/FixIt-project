@@ -1,9 +1,7 @@
 ---
-title: 微积分基础导论:微积分应用1
+title: 微积分基础导论:微积分应用2
 subtitle:
 date: 2026-05-26T16:32:22+08:00
-slug: 4eaad83
-draft: true
 author: 
   name: SunIsAlex
   link:
@@ -14,14 +12,15 @@ keywords:
 comment: false
 weight: 0
 tags:
-  - draft
+  - 物理竞赛
+  - 微积分
 categories:
-  - draft
+  - 物理
 hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary:
+summary: 以微积分为工具求解物理问题：从机械能守恒、简谐运动与弹性势能，到曲率半径、虚功原理与变质量绳，再到微元法运动学与刚体转动惯量，串联力学中的微分方程与积分思想。
 featuredImagePreview:
 featuredImage:
 password:
@@ -235,3 +234,145 @@ $$\begin{gathered}
 ![](image-7.png)
 
 使用虚功原理，可以较容易地解决2026朝阳高三二模T19(2)
+
+### 例8(必错题)
+地面上一根匀质细绳，长$l$,线密度$\lambda$,竖直向上的恒力$F_0$拉绳一端，当绳恰好离开地面时的速度$v_t$
+![alt text](image-8.png)
+
+$$\begin{gathered}
+  \frac{1}{2}l\lambda gl+\frac{1}{2}l\lambda v_t^2=F_0l\\
+  v_t=\sqrt{2F_0/\lambda-gl}
+\end{gathered}$$
+
+很不幸，这是一个**标准错误**。一根无张力绳拉直需要额外做功,此方法求出的$v_t$偏大。
+
+当绳端离地面$x$时，若速度为$v$,$\vec{v}=\frac{d\vec{x}}{dt}$,再向上提升$\Delta x$时:
+
+动量定理:$Fdt=(x\lambda)dv+(dx \lambda)(v+dv)$
+
+约去二阶小量：
+
+$F=\lambda xdv+\lambda vdx=\lambda\frac{d(vx)}{dt}$
+
+$Fdt=\lambda d(vx)$
+
+但是时间是不知道的，如果利用$dx=vdt$，就可以解决此问题:
+
+$Fx dx=\lambda vx(xdv+vdx)=\lambda (vx)d(vx)$
+
+注意这里的$F$均为合外力，$F=F_0-x\lambda g$
+
+$\int_0^l(F_0-x\lambda g)x dx=\int_{0}^{lv_t}\lambda (vx)d(vx)$
+
+$\frac{1}{2}F_0l^2-\frac{1}{3}\lambda gl^3=\lambda\frac{1}{2}(v_tl)^2$
+
+$\frac{1}{2}F_0-\frac{1}{3}\lambda gl=\lambda\frac{1}{2}(v_t)^2$
+
+解得$v_t=\sqrt{F_0/\lambda-\frac{2}{3}gl}$
+
+### 例9("微元法"运动学)
+![alt text](image-9.png)
+考虑对称性，显然三人组成的图形始终是正三角形:
+
+沿连线方向分解速度，可得到:
+
+$da=-\frac{3}{2}vdt$
+
+![alt text](image-10.png)
+
+$a=\frac{3}{2}vt$
+
+解得$t=\frac{2a}{3v}$
+
+![alt text](image-11.png "追击问题")
+
+设$kv$与竖直方向的夹角为$\theta$
+
+$$\begin{gathered}
+  vt_0=a\\
+  \int_{0}^{t_0}kv\cos\theta dt=a\\
+  \int_{0}^{t_0}kv\sin\theta dt=a\\
+  dl=(-kvdt+vdt\cos\theta)\\
+  \int_{a}^{0}dl=\int_0^{t_0}(-kvdt+vdt\cos\theta)\\
+  -a=-kvt_0+\frac{a}{k}=-ka+\frac{a}{k}\\
+  k^2-k-1=0\\
+  k=\frac{1+\sqrt{5}}{2}
+\end{gathered}$$
+
+## 转动惯量
+杆，板……等刚体(质点间距离不变)-质点系运动，都可以分解为**质心平动+绕质心转动**
+
+日地系统可以看作绕质心的"双星转动"，而又可以认为二者的质心绕着银河系中心平动(对于多个质点，才有转动的说法).
+
+日/地运动可以看作日地系统绕银河中心平动+日地绕质心的转动.
+
+由此，力对于质心，会产生平动；力的力矩，会导致转动。
+
+### 质点系牛顿第二定律
+$$\boxed{(\sum m)a_c=\sum{F}}$$
+### 科尼希(质心运动)定理
+$$\boxed{\sum{\frac{1}{2}m_iv_i^2}=\frac{1}{2}Mv^2+\sum{\frac{1}{2}m_iv_{ic}^2}}$$
+
+通过$a_c$，不难求得$v_c$;我们现在希望能通过合外力的力矩，求得所有质点绕质心旋转的角速度$\omega$.
+
+力矩$M=Fr$,角加速度$\beta=\frac{d\omega}{dt}$.
+
+定义:$M=I\beta$,其中$I$为转动惯量.
+
+$$\boxed{I=\sum{m_ir_i^2}}$$
+
+计算式如上，其中$r_i$为质点i到质心的距离.
+
+### 例10
+计算均匀杆绕中心的转动惯量
+
+$$\begin{gathered}
+  I=2\int_{0}^\frac{l}{2}\frac{dx}{l}mx^2\\
+  =\frac{1}{12}ml^2
+\end{gathered}$$
+
+### 例11
+计算均匀杆绕一端的转动惯量
+$$\begin{gathered}
+  I=\int_{0}^l\frac{dx}{l}mx^2=\frac{1}{3}ml^2
+\end{gathered}$$
+
+### 转动惯量平行轴定理
+刚体对**任意转轴**的转动惯量，等于其对**平行质心轴**的转动惯量与刚体总质量和两轴垂直距离平方的乘积之和。
+
+$$\boxed{I=I_c+Md^2}$$
+
+对于例11,$I=I_c+m(\frac{1}{2}l)^2=\frac{1}{12}ml^2+\frac{1}{4}ml^2=\frac{1}{3}ml^2$
+
+### 例12
+求均匀圆板绕过中心且垂直圆板的轴的转动惯量
+
+$$\begin{gathered}
+  I=\int_{0}^{R}\frac{2\pi rdr}{\pi R^2}mr^2\\
+  =\frac{2m}{R^2}\int_{0}^{R}r^3\\
+  =\frac{1}{2}mR^2
+\end{gathered}$$
+
+### 类比
+| 力 | 力矩 |
+| --- | --- |
+| $m$ | $I=\sum{m_ir_i^2}$ |
+| $v$ | $\omega$ |
+| $a$ | $\beta$ |
+| $F=ma$ | $M=I\beta$ |
+| $E=\frac{1}{2}mv^2$ | $E=\frac{1}{2}I\omega^2$ |
+
+## 展望(Prospect)
+![alt text](image-12.png)
+
+## 总结
+本文以一系列例题为线索，展示了微积分如何成为解决物理问题的统一语言。
+
+- **微分方程与机械能守恒（例1、例2）**：从能量守恒出发列出 $\frac{dh}{dt}$ 或 $\frac{d^2\vec{x}}{dt^2}$ 的微分方程，再通过分离变量或试探解求解。简谐运动中我们由 $x(t)=A\sin(\omega t+\phi)$ 反推出 $\omega=\sqrt{k/m}$，并结合机械能守恒导出弹性势能 $E_p=\frac{1}{2}kx^2$，同时建立了简谐运动与匀速圆周运动、$v$-$x$ 椭圆图之间的对应关系。
+- **简谐运动的对称性（例3）**：在含摩擦的振动问题中，用能量守恒配合“合成弹力与摩擦力、利用对称性”的技巧，得到初始振幅的取值范围 $A_0\in(\frac{2\mu mg}{k},\frac{3\mu mg}{k})$。
+- **曲率半径（例4–例6）**：把曲线运动视为瞬时圆周运动，借助 $\rho=\frac{v^2}{a_n}$ 与 $a_n=\frac{|\vec{a}\times\vec{v}|}{|\vec{v}|}$ 求抛物线、椭圆端点的曲率半径；并通过恰当的参数化（如极坐标换元）避开速度分量发散的陷阱。
+- **虚功原理与变质量问题（例7、例8）**：虚功原理能极快地求出半圆绳顶点张力 $F=\frac{mg}{\pi}$；而对“离地绳”一类变质量问题，必须用动量定理 $F\,dx=\lambda\,(vx)\,d(vx)$ 处理“拉直无张力绳的额外做功”，否则会落入能量守恒给出的标准错误，正确结果为 $v_t=\sqrt{F_0/\lambda-\frac{2}{3}gl}$。
+- **微元法运动学（例9）**：利用对称性与沿连线方向的速度分解处理追及问题，化复杂轨迹为简单的微元关系。
+- **转动惯量（例10–例12）**：将刚体运动分解为“质心平动 + 绕质心转动”，由质点系牛顿第二定律、科尼希定理引出转动惯量 $I=\sum m_i r_i^2$，计算了杆、圆板的转动惯量，并用平行轴定理 $I=I_c+Md^2$ 加以验证，最后给出平动量与转动量的类比表。
+
+贯穿全文的核心思想是：**先选取合适的物理守恒量或动力学方程，再通过微分建模、积分求解或微元分析将其转化为可计算的数学问题**。微积分不仅是计算工具，更提供了理解力学结构的视角。
