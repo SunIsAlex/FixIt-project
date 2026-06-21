@@ -28,7 +28,8 @@ message:
 repost:
   enable: false
   url:
-
+aliases:
+  - /posts/physic/application-of-the-law-of-gravitation
 # See details front matter: https://fixit.lruihao.cn/documentation/content-management/introduction/#front-matter
 ---
 
