@@ -124,9 +124,8 @@ $$\begin{gathered}
 每一部分向左的力会累加,每一部分向右的力也会累加,所以在中间的拉格朗日点所受的左右拉力差最大,最容易断裂.
 
 ## 二:双曲线轨道
-机械能$E\gt 0$,双曲线方程$\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$.
+机械能$E=\frac{GMm}{2a}\gt 0$,双曲线方程$\frac{x^2}{a^2}-\frac{y^2}{b^2}=1$.
 
-### 例1
 有一宇宙飞船绕一行星做匀速直线运动,轨道半径为$R$,飞船速率为$v_0$. 飞船突然点火,飞船从$v_0$加速到$\sqrt{3}v_0$,加速度方向与速度方向相同. 这样,飞船沿着新轨道运动. 设$\varphi$为由发动机点火时飞船速度方向与飞船里行星最远处时的速度方向之夹角(究极长难句)
 
 ![alt text](image-1.png)
@@ -165,4 +164,98 @@ $$\begin{gathered}
   b=(R+a)\cos\varphi\\
   \frac{\cos\varphi}{1-\sin\varphi}=\sqrt{3}\\
   \varphi=30\degree
+\end{gathered}$$
+
+例：质量为 \(M\) 的太阳（固定不动，视为质点），质量为 \(m\) 的质点以速度 \(v\)、瞄准距离 \(b\)，从无穷远处，在 \(M\) 的万有引力作用下，沿双曲线靠近 \(M\)，又远离到很远。求散射角 \(\theta\)（运动方向偏转角）。
+
+初速度方向为双曲线渐近线方向,瞄准距离即焦点到渐近线的距离,其大小上等于双曲线半虚轴长b.
+
+以机械能为桥梁求得半实轴a(注意,公式与椭圆轨道符号不同):
+
+$$\begin{gathered}
+  E=\frac{GMm}{a}=\frac{1}{2}mv^2\\
+  a=\frac{2GM}{v^2},\cos\frac{\pi-\theta}{2}=\frac{a}{c}=\frac{a}{\sqrt{a^2+b^2}}\\
+  \cos(\pi-\theta)=\frac{a^2-b^2}{a^2+b^2}=\frac{4G^2M^2-v^4b^2}{4G^2M^2+v^4b^2}\\
+  \theta=\arccos(-\frac{4G^2M^2-v^4b^2}{4G^2M^2+v^4b^2})
+\end{gathered}$$
+
+## 三:抛物线轨道
+两个质量均为m的彗星沿各自的抛物线轨道绕太阳运动,两轨道共面,当两彗星运动到离太阳距离为R处时,相互**垂直相碰**,并结合成一个天体,讨论此时结合天体以后的轨道.
+
+显而易见,两天体碰撞前后引力势能不变,动能减小(非弹性碰撞),故总机械能$E\lt0$,新轨道为椭圆.
+
+进一步,计算新轨道的半长轴.
+
+$$\begin{gathered}
+  \Delta E=\frac{1}{2}2m(\frac{\sqrt{2}}{2}v)^2-2\frac{1}{2}mv^2=-\frac{1}{2}mv^2\\
+  E=0+\Delta E=-\frac{1}{2}mv^2=\frac{GM(2m)}{-2a}\\
+  a=\frac{2GM}{v^2}\\
+  \frac{1}{2}mv^2-\frac{GMm}{R}=0\\
+  \Longrightarrow v^2=\frac{2GM}{R}\\
+  a=R
+\end{gathered}$$
+
+问题难度升级,两彗星质量分别为$m_1,m_2$.
+
+$$\begin{cases}
+  \frac{1}{2}m_1v_1^2-\frac{GMm_1}{R}=0\\
+  \frac{1}{2}m_2v_2^2-\frac{GMm_2}{R}=0
+\end{cases}\Longrightarrow
+v_1=v_2=\sqrt{\frac{2GM}{R}}$$
+
+考虑两彗星相撞动量守恒,画出矢量三角形:
+
+![alt text]({1805AB82-5A45-4778-83B2-4946B8A01B88}.png)
+
+$$\begin{gathered}
+  (m_1+m_2)v=\sqrt{(m_1v_1)^2+(m_2v_2)^2}\\
+  v=\frac{1}{m_1+m_2}\sqrt{(m_1v_1)^2+(m_2v_2)^2}\\
+  E=\Delta E=\frac{1}{2}(m_1+m_2)v^2-\frac{1}{2}(m_1v_1^2+m_2v_2^2)\\
+  =-\frac{m_1m_2}{2(m_1+m_2)}(v_1^2+v_2^2)=-\frac{2m_1m_2}{m_1+m_2}\frac{GM}{R}=\frac{GM(m_1+m_2)}{-2a}\\
+  a=\frac{(m_1+m_2)^2}{4m_1m_2}R
+\end{gathered}$$
+
+# 习题
+## 例1
+质量为m的登月器连接在质量为2m的航天飞机长,一起绕地球做匀速圆周运动,轨道半径为月球半径的3倍,航天飞机飞机把登月器反方向射出后,登月器仍沿原方向运动,登上月球表面(轨道与月球相切),在表面停留一段时间,之后经快速启动沿之前椭圆轨道和航天飞机对接,求登月器在月球表面可停留的所有可能时间间隔. 已知月球表面重力加速度$g_m=1.62m/s^2$,月球半径$R_m=1.74\times10^6m$.
+
+![alt text]({A8EEAE9D-A131-43EE-B75F-040070050753}.png)
+
+$$\begin{gathered}
+  \frac{GM_m(2m+m)}{(3R_m)^2}=(2m+m)\frac{v_0^2}{3R_m}\\
+  v_0=\sqrt{\frac{GM_m}{3R_m}}\\
+  T_0=\frac{2\pi(3R_m)}{v_0}=6\pi R_m\sqrt{\frac{3R_m}{GM_m}}\\
+  mg=\frac{GM_mm}{R_m^2}\\
+  GM_m=g_mR_m^2\\
+  T_0=6\pi R_m\sqrt{\frac{3R_m}{g_mR_m^2}}=6\pi \sqrt{\frac{3R_m}{g_m}}=9.4h
+\end{gathered}$$
+
+算出$T_0$的好处在于,可以把登月器新轨道周期和航天飞机新轨道周期都借助开普勒第三定律表示.
+
+设登月器新轨道半长轴为$a_1$,周期为$T_1$,航天飞机新轨道半长轴为$a_2$,周期为$T_2$.
+
+$$\begin{gathered}
+  (2m+m)v_0=mv_1+2mv_2\\
+  2a_1=3R_m+R_m,a_1=2R_m\\
+  \frac{T_1}{T_0}=\sqrt{(\frac{2R_m}{3R_m})}=(\frac{2}{3})^\frac{3}{2}=0.54\\
+  \frac{1}{2}mv_0^2-\frac{GM_mm}{3R_m}=\frac{GM_mm}{-2(3R_m)}\\
+  \frac{1}{2}mv_0^2=\frac{GM_mm}{6R_m}\\
+  \Delta E=\frac{GM_mm}{-2(2R_m)}-(-\frac{GM_mm}{6R_m})=-\frac{GM_mm}{12R_m}\\
+  =\frac{1}{2}m[v_1^2-v_0^2]\\
+  \frac{1}{2}mv_1^2=\frac{GM_mm}{12R_m},v_1=\frac{\sqrt{2}}{2}v_0\\
+  3mv_0=mv_1+2mv_2,v_2=\frac{6-\sqrt{2}}{4}v_0\\
+  E_2-(-\frac{GM_mm}{3R_m})=\frac{1}{2}2m[v_2^2-v_0^2]=\frac{1}{2}mv_0^2(\frac{11-6\sqrt{2}}{4})=\frac{GM_mm}{6R_m}(\frac{11-6\sqrt{2}}{4})\\
+  E_2=\frac{1-2\sqrt{2}}{8}\frac{GM_mm}{R_m}=\frac{GM_m(2m)}{-2a_2}\\
+  a_2=\frac{8}{2\sqrt{2}-1}=4.38R_m\\
+  \frac{T_2}{T_0}=(\frac{a_2}{a_0})^\frac{3}{2}=1.76\\
+  T_2=16.5h
+\end{gathered}$$
+
+只剩下临门一脚:
+
+$$\begin{gathered}
+  T_1+t=nT_2\\
+  t=nT_2-T_1\\
+  =(1.76n-0.54)9.4h(n=1,2,3,...)\\
+  t_{min}=11.5h
 \end{gathered}$$

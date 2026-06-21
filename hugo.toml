@@ -75,3 +75,8 @@ enable = false
   weight     = 30
   [menu.main.params]
     icon = 'fa-solid fa-globe'
+
+[params.app]
+  title = "∅AxiomLab"
+  iconColor = ""
+  tileColor = "#ffffff"
