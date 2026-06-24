@@ -20,7 +20,7 @@ hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
 hiddenFromFeed: false
-summary:
+summary: 本文系统介绍了天体运动中的几个核心专题，包括拉格朗日点的求解与小量近似、双曲线与抛物线轨道问题、开普勒第一定律的微积分推导，以及若干典型习题的详细解答。
 featuredImagePreview:
 featuredImage:
 password:
