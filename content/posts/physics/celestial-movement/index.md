@@ -1,11 +1,9 @@
 ---
-title: Index
+title: 天体运动:最终章
 subtitle:
 date: 2026-06-17T20:01:52+08:00
-slug: b37c694
-draft: true
 author:
-  name:
+  name: SunIsAlex
   link:
   email:
   avatar:
@@ -14,9 +12,10 @@ keywords:
 comment: false
 weight: 0
 tags:
-  - draft
+  - 物理竞赛
+  - 微积分
 categories:
-  - draft
+  - 物理
 hiddenFromHomePage: false
 hiddenFromSearch: false
 hiddenFromRelated: false
@@ -59,7 +58,7 @@ $$\begin{gathered}
   m_M(3r^2x_1^3+3rx_1^4+x_1^5)=m_N(r^5+2r^4x_1-3r^2x_1^3-3rx_1^4-x_1^5)\\
 \end{gathered}$$
 
-这里引入一种小量近似的方法:我们先假设$x_1$相对$r$为小量,然后检查结果的合理性.
+这里引入一种**小量近似**的方法:我们先假设$x_1$相对$r$为小量,然后检查结果的合理性.
 
 $$\begin{gathered}
   m_M(3r^2x_1^3)=m_Nr^5\\
@@ -230,7 +229,7 @@ $$\begin{gathered}
   T_0=6\pi R_m\sqrt{\frac{3R_m}{g_mR_m^2}}=6\pi \sqrt{\frac{3R_m}{g_m}}=9.4h
 \end{gathered}$$
 
-算出$T_0$的好处在于,可以把登月器新轨道周期和航天飞机新轨道周期都借助开普勒第三定律表示.
+算出$T_0$的好处在于,可以把登月器新轨道周期和航天飞机新轨道周期都借助**开普勒第三定律**表示.
 
 设登月器新轨道半长轴为$a_1$,周期为$T_1$,航天飞机新轨道半长轴为$a_2$,周期为$T_2$.
 
@@ -258,4 +257,118 @@ $$\begin{gathered}
   t=nT_2-T_1\\
   =(1.76n-0.54)9.4h(n=1,2,3,...)\\
   t_{min}=11.5h
+\end{gathered}$$
+
+## 例2
+(1)如图所示，考虑两个绕着太阳旋转的轨道。一个轨道 \(P\) 是圆形轨道半径为 \(R\)，一个轨道 \(Q\) 是椭圆轨道，远日点是 \(b\) 距离太阳 \(2R\) 到 \(3R\) 之间，近日点是 \(a\)，距离太阳是 \(R/3\) 到 \(R/2\) 之间。由以上条件，计算出 \(\frac{v_a}{v_b}\) 可能的最大值、最小值。
+
+ ![alt text]({DCBD38F4-84FF-414E-ACF4-806D89D5D12B}.png)
+
+由角动量守恒:
+
+$$v_ar_n=v_br_f$$
+
+所以:$\frac{v_a}{v_b}=\frac{r_f}{r_n}\in[4,9]$
+
+(2)大量的相同的微小粒子组成一个球状云。开始时候完全静止。质量密度为 \(\rho_0\) 占据了空中半径为 \(r_0\) 的区域。仅仅在万有引力的作用下，不考虑粒子之间的任何其他作用力或者影响，也不会发生碰撞。请猜出(估算)这些云，坍缩到一点需要花费多少时间？
+
+考虑最外层的粒子运动至中心所需时间:它们相当于在均匀球体的外部(含边界),受到均匀球体的引力相当于质量集中于球心所对应的引力.
+
+$$\begin{gathered}
+  a=\frac{GM}{r^2}\\
+  =\frac{G(\frac{4}{3}\pi r_0^3\rho_0)}{r^2}
+\end{gathered}$$
+
+本质上,就是求一个离心率为1的椭圆(退化为直线)的椭圆轨道的半周期.
+
+$$\begin{gathered}
+  T=2\pi \sqrt{\frac{a^3}{GM}}\\
+  =2\pi \sqrt{\frac{(\frac{r_0}{2})^3}{G(\frac{4}{3}\pi r_0^3\rho_0)}}\\
+  =2\pi \sqrt{\frac{3}{32G\pi\rho_0}}\\
+  =\sqrt{\frac{3\pi}{8G\rho_0}}\\
+  t=\frac{T}{2}=\sqrt{\frac{3\pi}{32G\rho_0}}
+\end{gathered}$$
+
+## 例3
+两个质点质量为m,万有引力常量为G,若两个质点做特殊的双星运动,即两个质点做形状完全相同的椭圆轨道运动,求运动周期.
+
+![alt text]({8D00DB0D-0296-41C5-B52A-7640D618C4B3}.png)
+
+不难看出,可以两质点间的万有引力**等效**为在P点放一个质量为$\frac{m}{4}$的质点.
+
+$$\frac{a^3}{T^2}=\frac{G(\frac{1}{4}m)}{4\pi^2}$$
+
+而半长轴$a=\frac{d+l}{4}$,解得:$T=\pi\sqrt{\frac{16(\frac{l+d}{4})^3}{Gm}}=\pi\sqrt{\frac{(l+d)^3}{4Gm}}$
+
+# 开普勒第一定律(由万有引力公式出发)
+复习椭圆的极坐标方程:
+
+$$\begin{gathered}
+  p=\frac{a^2}{c}-c=\frac{b^2}{c}\\
+  e=\frac{\rho}{p-\rho\cos\theta}\\
+  \rho=\frac{ep}{1+e\cos\theta},e\in(0,1)
+\end{gathered}$$
+
+历史上,胡克使用几何完成了证明,而牛顿使用了**微积分**(或者说**流数法**).
+
+我们使用微积分.
+
+$$\begin{gathered}
+  L=m\rho\rho\dot{\theta}=m\rho^2\dot{\theta}\\
+  a_n=\ddot{\rho}-\rho\dot{\theta}^2=-\frac{GM}{\rho^2}
+\end{gathered}$$
+
+注意以上式子中的正方向沿矢径向外.我们消去$\dot{\theta}$:
+
+$$\begin{gathered}
+  \ddot{\rho}-\rho\frac{L^2}{m^2\rho^4}=-\frac{GM}{\rho^2}\\
+  A=\frac{1}{\rho},\rho=\frac{1}{A}\\
+  d(\frac{1}{\rho})=-\frac{1}{\rho^2}d\rho\\
+  \dot{\rho}=\frac{d\rho}{dt}\\=\frac{d\rho}{d\theta}\frac{d\theta}{dt}\\
+  =\frac{d\rho}{d\theta}\dot{\theta}\\=\frac{d\rho}{d\theta}\frac{L}{m\rho^2}\\
+  =-d(\frac{1}{\rho})\frac{L}{md\theta}=-dA\frac{L}{md\theta}\\
+  \ddot{\rho}=\frac{d(\frac{d\rho}{dt})}{dt}=\frac{d(\frac{d\rho}{dt})}{d\theta}\frac{d\theta}{dt}\\
+  =-\frac{L^2}{m^2\rho^2}\frac{d^2A}{d\theta^2}\\
+  -\frac{L^2}{m^2\rho^2}\frac{d^2A}{d\theta^2}-\frac{L^2}{m^2}A^3=-GMA^2\\
+  \frac{d^2A}{d\theta^2}+(A-\frac{GMm^2}{L^2})=0\\
+  y=A-\frac{GMm^2}{L^2},\ddot{y}+y=0\\
+  A-\frac{GMm^2}{L^2}=C\cos(\theta+\varphi)\\
+  \rho=\frac{1}{A}=\frac{\frac{L^2}{GMm^2}}{1+C\cos(\theta+\varphi)}
+\end{gathered}$$
+
+显而易见,$e=C,p=\frac{L^2}{GMm^2}$,并且只要选取正确的极轴,就可以让$\varphi=0$.
+
+事实上,$e=\sqrt{1+\frac{2EL^2}{G^2M^2m^3}}$.
+
+## 快速记忆
+$1year=365day=525600min=31536000s$
+$M_{sun}=1.99\times10^{30}kg,M_{earth}=5.98\times10^{24}kg,M_{moon}=7.35\times10^{22}kg,R_{earth}=6.37\times10^6,R_{moon}=1.74\times10^6m,R_{earth-moon}=3.84\times10^8m,R_{earth-sun}=1.5\times10^{11}m=1A.U.,R_{mars-sun}=1.52A.U.,R_{jupiter-sun}=5.02A.U.$
+
+## 例4
+两颗质量分别为$M,m$的超新星相距d,绕其不动的质心各自做圆周运动.在超新星爆炸中,质量为$M$的超新星损失质量为$\Delta M$. 设爆炸是瞬时的,且完全球对称,忽略爆炸碎物对质量为m的超新星的直接作用.
+
+为了使余下的双星仍被束缚,而不会相互远离,求$\Delta M$的最大值.
+
+题目条件相当于,在**质心系**中体系的机械能小于0.
+
+$$\begin{gathered}
+  r_M=\frac{m}{M+m}d,r_m=\frac{M}{M+m}d\\
+  \frac{GMm}{d^2}=M\omega^2r_M\\
+
+\end{gathered}$$
+
+由于爆炸完全球对称,所以剩余部分的速度不变,但是速度减小了,这意味着质心速度不再为0了.
+
+$$\begin{gathered}
+  v_c=\frac{m\omega r_m-(M-\Delta M)\omega r_M}{M+m-\Delta M}\\
+  E_{kc}=\frac{1}{2}(m+M-\Delta M)v_c^2\\
+  E_{k}=\frac{1}{2}(M-\Delta M)(r_M\omega)^2+\frac{1}{2}m(r_m\omega)^2\\
+  U=-\frac{G(M-\Delta M)m}{d}
+\end{gathered}$$
+
+以**爆炸后的质心**为系,结合**科尼希定理**:
+
+$$\begin{gathered}
+  E'=E_k-E_{kc}+U\lt0\\
+  \Longrightarrow \Delta M\lt\frac{M+m}{2}
 \end{gathered}$$
