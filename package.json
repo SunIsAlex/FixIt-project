@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "hugo --minify",
+    "dev": "hugo server"
+  },
+  "devDependencies": {
+    "hugo-extended": "^0.162.0"
+  }
+}
