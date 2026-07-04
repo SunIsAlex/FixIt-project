@@ -354,7 +354,6 @@ $M_{sun}=1.99\times10^{30}kg,M_{earth}=5.98\times10^{24}kg,M_{moon}=7.35\times10
 $$\begin{gathered}
   r_M=\frac{m}{M+m}d,r_m=\frac{M}{M+m}d\\
   \frac{GMm}{d^2}=M\omega^2r_M\\
-
 \end{gathered}$$
 
 由于爆炸完全球对称,所以剩余部分的速度不变,但是速度减小了,这意味着质心速度不再为0了.
