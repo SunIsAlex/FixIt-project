@@ -177,4 +177,4 @@ $$
 
 特别鸣谢 B 站 @Babychem，机理图片来自这位 UP 的视频：
 
-[【基础有机化学 L18-8 Knoevenagel 反应与 Robinson 增环】](https://www.bilibili.com/video/BV14B4y1r7sf/?share_source=copy_web&vd_source=8df86ec0f66b0d7c70b7414a1a60bc6a)
+[【基础有机化学 L18-7 芳香醛的缩合】](https://www.bilibili.com/video/BV1VG4y1q7xh/?share_source=copy_web&vd_source=8df86ec0f66b0d7c70b7414a1a60bc6a) 
