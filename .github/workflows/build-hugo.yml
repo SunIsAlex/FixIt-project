@@ -1,4 +1,4 @@
-name: Build Hugo for ESA Pages
+name: Build and Deploy Hugo
 
 on:
   push:
@@ -9,8 +9,16 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: hugo-production-deploy
+  cancel-in-progress: true
+
+env:
+  HUGO_VERSION: '0.162.1'
+  SITE_URL: ${{ vars.SITE_URL || 'http://blog.sunisalex.org/' }}
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-22.04
 
     steps:
@@ -23,7 +31,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.162.1'
+          hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
       - name: Setup Node
@@ -32,10 +40,17 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm ci || npm install
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
 
       - name: Build
-        run: hugo --minify
+        run: |
+          SITE_URL="${SITE_URL%/}/"
+          hugo --minify --baseURL "$SITE_URL" --cacheDir "$RUNNER_TEMP/hugo_cache"
 
       - name: Publish static files to esa-pages branch
         uses: peaceiris/actions-gh-pages@v4
@@ -43,3 +58,40 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: esa-pages
           publish_dir: ./public
+
+      - name: Validate deployment settings
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          missing=0
+          for name in SSH_HOST SSH_USER SSH_PRIVATE_KEY DEPLOY_PATH; do
+            if [ -z "${!name}" ]; then
+              echo "::error::$name secret is required for server deployment"
+              missing=1
+            fi
+          done
+          exit "$missing"
+
+      - name: Configure SSH
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_PORT: ${{ secrets.SSH_PORT || '22' }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts
+
+      - name: Deploy static files to server
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PORT: ${{ secrets.SSH_PORT || '22' }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "mkdir -p '$DEPLOY_PATH'"
+          rsync -az --delete --chmod=D755,F644 -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT" public/ "$SSH_USER@$SSH_HOST:$DEPLOY_PATH/"
