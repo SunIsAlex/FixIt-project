@@ -591,5 +591,5 @@ $$\begin{gathered}
 ---
 
 > 作者: <no value>  
-> URL: http://blog.sunisalex.org/posts/math/2022-labour-day/4-30-01/  
+> URL: https://www.sunisalex.org/posts/math/2022-labour-day/4-30-01/  
 

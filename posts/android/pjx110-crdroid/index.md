@@ -170,5 +170,5 @@ Total xfer(Total transfer)是**总传输倍率**，表示实际传输的数据�
 ---
 
 > 作者: SunIsAlex  
-> URL: http://blog.sunisalex.org/posts/android/pjx110-crdroid/  
+> URL: https://www.sunisalex.org/posts/android/pjx110-crdroid/  
 

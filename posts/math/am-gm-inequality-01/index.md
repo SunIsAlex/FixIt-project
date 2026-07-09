@@ -116,5 +116,5 @@ $b=\frac{2\frac{b}{c}+\frac{b}{a}+\frac{c}{d}}{4}$
 ---
 
 > 作者: <no value>  
-> URL: http://blog.sunisalex.org/posts/math/am-gm-inequality-01/  
+> URL: https://www.sunisalex.org/posts/math/am-gm-inequality-01/  
 

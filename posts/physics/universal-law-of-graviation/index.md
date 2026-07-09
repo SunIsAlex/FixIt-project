@@ -390,5 +390,5 @@ $$\begin{gathered}
 ---
 
 > 作者: SunIsAlex  
-> URL: http://blog.sunisalex.org/posts/physics/universal-law-of-graviation/  
+> URL: https://www.sunisalex.org/posts/physics/universal-law-of-graviation/  
 

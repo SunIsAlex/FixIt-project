@@ -38,5 +38,5 @@ $g''(x)=f'(\frac{x+a}{2})+\frac{x-a}{4}f''(\frac{x+a}{2})-f'(x)$
 ---
 
 > 作者: <no value>  
-> URL: http://blog.sunisalex.org/posts/math/hermite-hadamard-inequality/  
+> URL: https://www.sunisalex.org/posts/math/hermite-hadamard-inequality/  
 

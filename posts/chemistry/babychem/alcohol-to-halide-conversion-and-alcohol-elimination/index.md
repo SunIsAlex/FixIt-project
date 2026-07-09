@@ -94,5 +94,5 @@ Ts=Tosyl=对甲苯磺酸基
 ---
 
 > 作者: SunIsAlex  
-> URL: http://blog.sunisalex.org/posts/chemistry/babychem/alcohol-to-halide-conversion-and-alcohol-elimination/  
+> URL: https://www.sunisalex.org/posts/chemistry/babychem/alcohol-to-halide-conversion-and-alcohol-elimination/  
 

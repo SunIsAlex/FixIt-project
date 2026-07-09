@@ -64,5 +64,5 @@ $T_2$操作**不会改变平方和的大小**,但是让大的数放到了前面,
 ---
 
 > 作者: <no value>  
-> URL: http://blog.sunisalex.org/posts/math/sequence-transform-t1-t2/  
+> URL: https://www.sunisalex.org/posts/math/sequence-transform-t1-t2/  
 

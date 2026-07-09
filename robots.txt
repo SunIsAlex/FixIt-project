@@ -97,4 +97,4 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
-Sitemap: http://blog.sunisalex.org/sitemap.xml
+Sitemap: https://www.sunisalex.org/sitemap.xml

@@ -257,5 +257,5 @@ $$u = -(v+w) = -2r^{1/3}\cos\frac{\theta}{3} \in \mathbb{R}$$
 ---
 
 > 作者: Alex  
-> URL: http://blog.sunisalex.org/posts/math/factor-a3-b3-c3-3abc/  
+> URL: https://www.sunisalex.org/posts/math/factor-a3-b3-c3-3abc/  
 

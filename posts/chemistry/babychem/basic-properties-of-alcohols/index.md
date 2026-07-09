@@ -83,5 +83,5 @@ $$\boxed{\text{醇+活泼金属(K,Na,Mg,Al)}\rightarrow\text{醇盐}+\ce{H2 ^}}$
 ---
 
 > 作者: SunIsAlex  
-> URL: http://blog.sunisalex.org/posts/chemistry/babychem/basic-properties-of-alcohols/  
+> URL: https://www.sunisalex.org/posts/chemistry/babychem/basic-properties-of-alcohols/  
 

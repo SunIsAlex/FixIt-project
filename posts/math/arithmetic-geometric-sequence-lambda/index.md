@@ -106,5 +106,5 @@ $$
 ---
 
 > 作者: <no value>  
-> URL: http://blog.sunisalex.org/posts/math/arithmetic-geometric-sequence-lambda/  
+> URL: https://www.sunisalex.org/posts/math/arithmetic-geometric-sequence-lambda/  
 

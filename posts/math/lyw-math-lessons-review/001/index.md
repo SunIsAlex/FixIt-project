@@ -194,5 +194,5 @@ $(...(2*3)*4)...)*21=\frac{g(2)g(3)...g(21)-1}{g(2)g(3)...g(21)+1}$
 ---
 
 > 作者: <no value>  
-> URL: http://blog.sunisalex.org/posts/math/lyw-math-lessons-review/001/  
+> URL: https://www.sunisalex.org/posts/math/lyw-math-lessons-review/001/  
 

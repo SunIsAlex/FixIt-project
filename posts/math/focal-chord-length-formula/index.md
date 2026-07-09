@@ -186,5 +186,5 @@ $13k^2(24-p^2)=2p(24k^2-p^2+24)$
 ---
 
 > 作者: <no value>  
-> URL: http://blog.sunisalex.org/posts/math/focal-chord-length-formula/  
+> URL: https://www.sunisalex.org/posts/math/focal-chord-length-formula/  
 

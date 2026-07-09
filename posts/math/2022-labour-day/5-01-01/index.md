@@ -289,5 +289,5 @@ $$
 ---
 
 > 作者: SunIsAlex  
-> URL: http://blog.sunisalex.org/posts/math/2022-labour-day/5-01-01/  
+> URL: https://www.sunisalex.org/posts/math/2022-labour-day/5-01-01/  
 

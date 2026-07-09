@@ -430,5 +430,5 @@ blue moon:一个公历月出现了第二次满月.
 ---
 
 > 作者: SunIsAlex  
-> URL: http://blog.sunisalex.org/posts/physics/application-of-the-law-of-gravitation/  
+> URL: https://www.sunisalex.org/posts/physics/application-of-the-law-of-gravitation/  
 

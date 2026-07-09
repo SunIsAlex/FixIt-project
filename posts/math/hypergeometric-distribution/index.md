@@ -82,5 +82,5 @@ $$E(X)=n\frac{K}{N},\qquad D(X)=n\frac{K}{N}\cdot\frac{N-K}{N}\cdot\frac{N-n}{N-
 ---
 
 > 作者: SunIsAlex  
-> URL: http://blog.sunisalex.org/posts/math/hypergeometric-distribution/  
+> URL: https://www.sunisalex.org/posts/math/hypergeometric-distribution/  
 

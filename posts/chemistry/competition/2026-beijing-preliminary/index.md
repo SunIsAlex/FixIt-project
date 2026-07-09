@@ -176,5 +176,5 @@ E.N.D
 ---
 
 > 作者: <no value>  
-> URL: http://blog.sunisalex.org/posts/chemistry/competition/2026-beijing-preliminary/  
+> URL: https://www.sunisalex.org/posts/chemistry/competition/2026-beijing-preliminary/  
 

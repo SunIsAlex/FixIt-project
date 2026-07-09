@@ -126,5 +126,5 @@ $a_{p_k+2} = (a_{p_k+2} - a_{p_{k-1}+2}) + (a_{p_{k-1}+2} - a_{p_{k-2}+2}) + \do
 ---
 
 > 作者: <no value>  
-> URL: http://blog.sunisalex.org/posts/math/max-minus-min-sequence/  
+> URL: https://www.sunisalex.org/posts/math/max-minus-min-sequence/  
 

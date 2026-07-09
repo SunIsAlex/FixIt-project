@@ -96,5 +96,5 @@ $\frac{b_{2k+1}}{b_{2k}}=4-\frac{2}{k}\lt 4$
 ---
 
 > 作者: SunIsAlex  
-> URL: http://blog.sunisalex.org/posts/math/beijing-2025-haidian-final-exam-grade11/  
+> URL: https://www.sunisalex.org/posts/math/beijing-2025-haidian-final-exam-grade11/  
 
