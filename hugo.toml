@@ -3,8 +3,60 @@ languageCode = 'zh-cn'
 title = '∅AxiomLab'
 theme = 'FixIt'
 enableRobotsTXT = true
+
+[outputFormats.search]
+baseName = "search"
+mediaType = "application/json"
+rel = "search"
+isPlainText = true
+isHTML = false
+permalinkable = true
+
+[outputs]
+home = [
+  "html",
+  "rss",
+  "archives",
+  "offline",
+  "search"
+]
+page = [
+  "html",
+  "markdown"
+]
+section = [
+  "html",
+  "rss"
+]
+taxonomy = [ "html" ]
+term = [
+  "html",
+  "rss"
+]
 [params]
   capitalizeTitles = false     # 关闭 FixIt 的标题自动大写
+[params.search]
+enable = true
+type = "fuse"
+contentLength = 4000
+placeholder = "搜索文章标题或内容..."
+maxResultLength = 10
+snippetLength = 30
+highlightTag = "em"
+absoluteURL = false
+anchorify = true
+
+[params.search.fuse]
+isCaseSensitive = false
+minMatchCharLength = 2
+findAllMatches = false
+location = 0
+threshold = 0.3
+distance = 100
+ignoreLocation = false
+useExtendedSearch = false
+ignoreFieldNorm = false
+
 [markup]
 
 [markup.goldmark]
@@ -67,14 +119,6 @@ enable = false
   weight     = 20
   [menu.main.params]
     icon = 'fa-solid fa-folder-open'
-
-[[menu.main]]
-  identifier = 'nav'
-  name       = 'Navigation'
-  url        = 'https://app.sunisalex.org'
-  weight     = 30
-  [menu.main.params]
-    icon = 'fa-solid fa-globe'
 
 [params.app]
   title = "∅AxiomLab"
