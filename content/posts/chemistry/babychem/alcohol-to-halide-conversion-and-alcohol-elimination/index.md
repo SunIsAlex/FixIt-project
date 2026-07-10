@@ -121,3 +121,6 @@ Ts=Tosyl=对甲苯磺酸基
 一般来说,对于碳正离子,六元环比五元环环张力更小,更稳定.
 
 ![alt text](image-13.png)
+
+## Practice
+![alt text](image-14.png)
