@@ -91,6 +91,10 @@ Ts=Tosyl=对甲苯磺酸基
 
 ![alt text](image-13.png)
 
+## Practice
+![alt text](image-14.png)
+
+
 ---
 
 > 作者: SunIsAlex  
