@@ -193,7 +193,7 @@ $$\begin{gathered}
 ## 例2.9
 (浙江大学) 设正数 \(x_1, x_2, \dots, x_n\) 之和等于 1 (\(n \geq 2\))，求证：  
 
-\[\frac{1}{x_1 - x_1^3} + \frac{1}{x_2 - x_2^3} + \cdots + \frac{1}{x_n - x_n^3} > 4。\]
+\[\frac{1}{x_1 - x_1^3} + \frac{1}{x_2 - x_2^3} + \cdots + \frac{1}{x_n - x_n^3} > 4\]
 
 考虑局部不等式:
 
